@@ -1,5 +1,7 @@
 .movies {
     color: darkseagreen;
+    border: 3px solid darksalmon;
+    padding: 1em;
 }
 
 h3 {
