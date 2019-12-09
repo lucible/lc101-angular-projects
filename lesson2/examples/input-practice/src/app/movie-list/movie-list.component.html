@@ -1,8 +1,13 @@
 <div class='movies col-4'>
-    <h3>Movies to Watch</h3>
-    <ol>
-       <li *ngFor ="let movie of movies">{{movie}}</li>
-    </ol>
-    <hr>
+   <h3>Movies to Watch</h3>
+      <ol>
+         <li *ngFor ="let movie of movies">{{movie}}</li>
+      </ol>
+   <hr>
 
- </div>
+<input #newMovie (keyup.enter)="error = addMovie(newMovie.value); newMovie.value = ''" type="text" placeholder="Enter movie title here." />
+<button (click)="error = addMovie(newMovie.value); newMovie.value = ''">Add</button>
+
+<p class="error" *ngIf="error !== ''">{{error}}</p>
+
+</div>

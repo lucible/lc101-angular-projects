@@ -12,4 +12,16 @@ export class MovieListComponent implements OnInit {
 
    ngOnInit() {
    }
+
+   addMovie(newTitle : string) {
+      let error = ''
+      if (newTitle === '') {
+         error = 'Error: blank titles not allowed.'
+      } else if (this.movies.includes(newTitle)) {
+         error = 'Error: duplicate movie submitted.'
+      } else {
+         this.movies.push(newTitle)
+      }
+      return error
+   }
 }
